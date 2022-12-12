@@ -7,6 +7,9 @@ impl Aoc2022_02 {
 
 }
 
+// Col 1 map: A -> Rock, B -> Paper, C -> Scissors
+// Col 2 map: X -> Rock, Y -> Paper, Z -> Scissors
+
 impl crate::Runner for Aoc2022_02 {
     fn name(&self) -> (usize, usize) {
         (2022, 2)
