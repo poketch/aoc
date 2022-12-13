@@ -8,7 +8,7 @@ where
     let content = fs::read_to_string(file.into()).expect("file not found");
 
     content
-        .split("\r\n")
+        .split("\n")
         .filter(|l| !l.is_empty())
         .map(|l| l.parse::<T>().unwrap())
         .collect()
