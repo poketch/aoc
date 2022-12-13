@@ -1,6 +1,5 @@
 pub mod read;
-
-
+pub mod mathemagic;
 
 
 
@@ -8,5 +7,4 @@ pub mod read;
 
 // Re-Export
 pub use read::*;
-
-
+pub use mathemagic::*;
