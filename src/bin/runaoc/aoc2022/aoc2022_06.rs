@@ -18,7 +18,8 @@ impl crate::Runner for Aoc2022_06 {
 
         let content = aoc::read_linedata_from_file::<String>(file);
 
-        self.buffer = content[0].as_str().chars().collect();
+        // will always have 1 if file is reda properly, unwrap is fine
+        self.buffer = content.first().unwrap().chars().collect();
     }
 
     fn part1(&mut self) -> Vec<String> {

@@ -115,7 +115,6 @@ impl crate::Runner for Aoc2022_05 {
             for ch in stack.iter().rev() {
                 crates[instruction.to - 1].push_front(*ch);
             }
-            stack.clear();
         }      
 
         let mut res = String::with_capacity(9);

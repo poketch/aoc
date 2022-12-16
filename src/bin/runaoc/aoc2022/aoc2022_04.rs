@@ -38,11 +38,10 @@ impl crate::Runner for Aoc2022_04 {
             .map(|line| {
                 line.split(",")
                     .map(|r| {
-                        r.split("-")
-                            .map(|limits| limits.to_string())
-                            .collect::<Vec<String>>()
+                        // unwrap is fine if file is parsed properly
+                        let (upper, lower) = r.split_once("-").unwrap();
+                        lower.parse::<usize>().unwrap()..=upper.parse::<usize>().unwrap()
                     })
-                    .map(|v| v[0].parse::<usize>().unwrap()..=v[1].parse::<usize>().unwrap())
                     .collect::<Vec<RangeInclusive<usize>>>()
             })
             .collect::<Vec<Vec<RangeInclusive<usize>>>>();

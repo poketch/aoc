@@ -7,7 +7,6 @@ pub struct Aoc2022_07 {
 
 #[derive(Default, Debug)]
 struct Dir {
-    name: String,
     size: RefCell<usize>,
     parent: Option<Rc<Dir>>,
     subdir: RefCell<HashMap<String, Rc<Dir>>>,
@@ -23,7 +22,6 @@ impl Aoc2022_07 {
     pub fn new() -> Self {
         Self {
             root: Rc::new(Dir {
-                name: "/".to_string(),
                 ..Default::default()
             }),
         }
@@ -56,7 +54,6 @@ impl crate::Runner for Aoc2022_07 {
                     cwd.subdir.borrow_mut().insert(
                         dirname.to_string(),
                         Rc::new(Dir {
-                            name: dirname.to_string(),
                             size: RefCell::new(0),
                             parent: Some(Rc::clone(&cwd)),
                             subdir: RefCell::new(HashMap::new()),
